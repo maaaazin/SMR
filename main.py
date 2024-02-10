@@ -1,24 +1,33 @@
-import pygame 
+import pygame as pg
 
 # Initializing pygame
-pygame.init()
+pg.init()
 
 # This bit creates the screen of [height x width] pixels
-screen = pygame.display.set_mode((800,600))
+screen = pg.display.set_mode((800,600))
 
 # The title and icon for the game
-pygame.display.set_caption("SMR")
-icon = pygame.image.load('icon.png')
-pygame.display.set_icon(icon)
+pg.display.set_caption("SMR")
+icon = pg.image.load('icon.png')
+pg.display.set_icon(icon)
 
+# Player
+player_img = pg.image.load('spaceship.png')
+playerX = 370
+playerY = 480
 
+def player():
+    screen.blit(player_img, (playerX, playerY))
 
 # This is an infinte loop that makes sure window keeps running 
 running = True
 while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+
+    screen.fill((0,0,0))
+
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
             running = False
     
-    screen.fill((0,255,0)) # These are RGB values. bound - {0,255}. Stored in tuples
-    pygame.display.update()
+    player()
+    pg.display.update()
