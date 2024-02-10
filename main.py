@@ -12,7 +12,6 @@ icon = pygame.image.load('icon.png')
 pygame.display.set_icon(icon)
 
 
-# Event is anything that happens inside the game window
 
 # This is an infinte loop that makes sure window keeps running 
 running = True
